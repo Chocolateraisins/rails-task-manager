@@ -4,24 +4,13 @@
   <% @tasks.each do |task| %>
   <li>
     <h3>
-      <%= task.title %>
+      <!--       <%= task.title %> -->
+      <%= link_to task.title, task_path(task) %>
     </h3>
-    <p>Description:
-      <i>
-        <%= task.details %>
-      </i>
-    </p>
-    <p>Task completed:
-      <i>
-        <% if task.completed == true %>
-        <input type="checkbox" checked disabled>
-        <% else %>
-        <input type="checkbox" disabled>
-        <% end %>
-      </i>
-    </p>
-
   </li>
   <% end %>
 </ul>
+
+<%= link_to 'Create a new task', tasks_new_path %>
+
 
